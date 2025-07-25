@@ -3,6 +3,17 @@
 ## about the view files
 
 Every file endpoint in views must have its name ending with ".blade.php" to allow it to be founded by the laravel routes
+oxford-blue: #0a1128ff;
+penn-blue: #001f54ff;
+indigo-dye: #034078ff;
+cerulean: #1282a2ff;
+white: #fefcfbff;
+
+yale-blue: #134074ff;
+berkeley-blue: #13315cff;
+oxford-blue: #0b2545ff;
+powder-blue: #8da9c4ff;
+mint-cream: #eef4edff;
 
 ## laravel crud
 
