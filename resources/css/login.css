@@ -11,7 +11,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    background-image: url("../images/background_wave.svg");
+    background-image: url("../../public/images/background_wave.svg");
     background-attachment: fixed;
 }
 footer {
@@ -33,6 +33,7 @@ form {
     gap: 15px 0px;
     border-radius: 5px;
     background-color: #f0f0f0;
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
 form>div:first-child {
     align-self: flex-start;
@@ -100,7 +101,7 @@ form h2 {
     justify-content: center;
     align-items: flex-start;
     flex-flow: column;
-    gap: 10px 0px;
+    gap: 15px 0px;
     font-size: 0.9em;
     font-weight: 600;
 }
@@ -204,4 +205,12 @@ form button {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+#logo {
+    width: 250px;
+    align-self: flex-start;
+    margin: 20px 0px 0px 40px;
+}
+#logo img {
+    width: 100%;
 }

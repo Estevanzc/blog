@@ -11,3 +11,36 @@ a {
     text-decoration: none;
     color: black;
 }
+:root {
+--lapis-lazuli: #2f6690ff;
+--cerulean: #3a7ca5ff;
+--platinum: #d9dcd6ff;
+--indigo-dye: #16425bff;
+--sky-blue: #81c3d7ff;
+
+--gradient-top: linear-gradient(0deg, #2f6690ff, #3a7ca5ff, #d9dcd6ff, #16425bff, #81c3d7ff);
+--gradient-right: linear-gradient(90deg, #2f6690ff, #3a7ca5ff, #d9dcd6ff, #16425bff, #81c3d7ff);
+--gradient-bottom: linear-gradient(180deg, #2f6690ff, #3a7ca5ff, #d9dcd6ff, #16425bff, #81c3d7ff);
+--gradient-left: linear-gradient(270deg, #2f6690ff, #3a7ca5ff, #d9dcd6ff, #16425bff, #81c3d7ff);
+--gradient-top-right: linear-gradient(45deg, #2f6690ff, #3a7ca5ff, #d9dcd6ff, #16425bff, #81c3d7ff);
+--gradient-bottom-right: linear-gradient(135deg, #2f6690ff, #3a7ca5ff, #d9dcd6ff, #16425bff, #81c3d7ff);
+--gradient-top-left: linear-gradient(225deg, #2f6690ff, #3a7ca5ff, #d9dcd6ff, #16425bff, #81c3d7ff);
+--gradient-bottom-left: linear-gradient(315deg, #2f6690ff, #3a7ca5ff, #d9dcd6ff, #16425bff, #81c3d7ff);
+--gradient-radial: radial-gradient(#2f6690ff, #3a7ca5ff, #d9dcd6ff, #16425bff, #81c3d7ff);
+
+--platinum: #dcdcddff;
+--french-gray: #c5c3c6ff;
+--outer-space: #46494cff;
+--paynes-gray: #4c5c68ff;
+--blue-munsell: #1985a1ff;
+
+--gradient-top: linear-gradient(0deg, #dcdcddff, #c5c3c6ff, #46494cff, #4c5c68ff, #1985a1ff);
+--gradient-right: linear-gradient(90deg, #dcdcddff, #c5c3c6ff, #46494cff, #4c5c68ff, #1985a1ff);
+--gradient-bottom: linear-gradient(180deg, #dcdcddff, #c5c3c6ff, #46494cff, #4c5c68ff, #1985a1ff);
+--gradient-left: linear-gradient(270deg, #dcdcddff, #c5c3c6ff, #46494cff, #4c5c68ff, #1985a1ff);
+--gradient-top-right: linear-gradient(45deg, #dcdcddff, #c5c3c6ff, #46494cff, #4c5c68ff, #1985a1ff);
+--gradient-bottom-right: linear-gradient(135deg, #dcdcddff, #c5c3c6ff, #46494cff, #4c5c68ff, #1985a1ff);
+--gradient-top-left: linear-gradient(225deg, #dcdcddff, #c5c3c6ff, #46494cff, #4c5c68ff, #1985a1ff);
+--gradient-bottom-left: linear-gradient(315deg, #dcdcddff, #c5c3c6ff, #46494cff, #4c5c68ff, #1985a1ff);
+--gradient-radial: radial-gradient(#dcdcddff, #c5c3c6ff, #46494cff, #4c5c68ff, #1985a1ff);
+}

@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
+use App\Http\Requests\UserRequest;
+use App\Models\User;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -13,56 +17,52 @@ class UserController extends Controller
     public function logon() {
         return view("users.logon");
     }
-    public function index()
-    {
-        //
+    public function auth_login(Request $request) {
+        $request_data = $request->validate([
+            "email" => ["required", "exists:users,email"],
+            "password" => ["required"],
+        ]);
+        $user = User::where("email", $request_data["email"])->first();
+        if (empty($user)) {
+            return redirect()->route("login")->withErrors([
+                "Login" => "We did not find a user with this address"
+            ])->withInput([
+                        "email" => $request_data["email"],
+                        "password" => $request_data["password"],
+                    ]);
+        }
+        if (!Hash::check($request_data["password"], $user["password"])) {
+            return redirect()->route("login")->withErrors([
+                "Password" => "Password incorrect"
+            ])->withInput([
+                        "email" => $request_data["email"],
+                        "password" => $request_data["password"],
+                    ]);
+        }
+        if (Auth::attempt(["email" => $request_data["email"], "password" => $request_data["password"]])) {
+            $request->session()->regenerate();
+        }
+        return redirect()->route("index");
     }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
+    public function auth_logon(UserRequest $request) {
+        $request_data = $request->validated();
+        $request_data["password"] = Hash::make($request_data["password"]);
+        $user = User::create($request_data);
+        Auth::login($user);
+        return redirect()->route("index");
     }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
+    public function index() {
     }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
+    public function create() {
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
+    public function store(Request $request) {
     }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
+    public function show(string $id) {
     }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+    public function edit(string $id) {
+    }
+    public function update(Request $request, string $id) {
+    }
+    public function destroy(string $id) {
     }
 }

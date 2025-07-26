@@ -1,0 +1,108 @@
+@import url('common.css');
+header {
+    position: fixed;
+    z-index: 1;
+    width: 100vw;
+    height: 75px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 100%;
+    background-color: rgba(255,255,255,0.7);
+    backdrop-filter: blur(2px);
+}
+header>* {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header nav:nth-child(2) {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    gap: 0px 25px;
+}
+header>nav a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #0b132b;
+    padding: 7.5px 15px;
+    border-radius: 5px;
+    gap: 0px 5px;
+    transition: all 0.25s ease;
+}
+header>nav a p {
+    font-size: 0.9em;
+    font-weight: bold;
+}
+header>nav a:hover {
+    background-color: rgba(129, 195, 215, 0.3);
+}
+header>div:first-child {
+    justify-content: flex-start;
+    padding: 0px 25px;
+}
+header>div:last-child {
+    gap: 0px 10px;
+}
+header>div:last-child a {
+    padding: 7.5px 15px;
+    transition: all 0.25s ease;
+    border-radius: 5px;
+    font-weight: bold;
+}
+#login_button {
+    color: #16425b;
+    border: 2px solid #16425b;
+}
+#logon_button {
+    color: white;
+    background-color: #16425b;
+    border: 2px solid #16425b;
+}
+header>div:last-child a:hover {
+    opacity: 0.8;
+}
+#logo {
+    height: 85%;
+}
+#logo img {
+    height: 100%;
+}
+#search_input {
+    flex-grow: 1;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    background-color: #cacaca;
+}
+#search_input button {
+    width: 12.5%;
+    height: 100%;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    transition: all 0.25s ease;
+}
+#search_input button:hover {
+    background-color: #e4e4e4;
+}
+#search_input button:active {
+    background-color: #c9c9c9;
+}
+#search_input input {
+    flex-grow: 1;
+    height: 100%;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+    background-color: transparent;
+    border: none;
+    padding: 0px 15px;
+    outline: none;
+    font-size: 0.8em;
+}

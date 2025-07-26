@@ -1,11 +1,17 @@
 <?php
 
+use App\Http\Controllers\GeneralController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
+Route::get("/", function() {
+    return redirect()->route("index");
 });
+Route::get("/feed", [GeneralController::class, "index"])->name("index");
+Route::get("/login", [UserController::class, "login"])->name("login");
+Route::get("/logon", [UserController::class, "logon"])->name("logon");
+Route::get("/logout", [UserController::class, "logout"])->name("logout");
 Route::prefix("/auth")->group(function() {
-    Route::get("/login", [UserController::class, "login"])->name("login");
-    Route::get("/logon", [UserController::class, "logon"])->name("logon");
+    Route::post("/login", [UserController::class, "auth_login"])->name("auth.login");
+    Route::post("/logon", [UserController::class, "auth_logon"])->name("auth.logon");
 });

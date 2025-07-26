@@ -2,9 +2,20 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\User;
+use Database\Seeders\TagSeeder;
 use Illuminate\Database\Seeder;
+use Database\Seeders\BlogSeeder;
+use Database\Seeders\PostSeeder;
+use Database\Seeders\UserSeeder;
+use Database\Seeders\CommentSeeder;
+use Database\Seeders\Blog_tagSeeder;
+use Database\Seeders\CategorySeeder;
+use Database\Seeders\FollowerSeeder;
+use Database\Seeders\Post_tagSeeder;
+use Database\Seeders\OcupationSeeder;
+use Database\Seeders\Post_likeSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -17,7 +28,22 @@ class DatabaseSeeder extends Seeder
 
         User::factory()->create([
             'name' => 'Test User',
-            'email' => 'test@example.com',
+            'email' => 'admin@gmail.com',
+            'password' => 'admin',
+            'birth' => '2008-02-26',
+        ]);
+        $this->call([
+            OcupationSeeder::class,
+            UserSeeder::class,
+            CategorySeeder::class,
+            TagSeeder::class,
+            BlogSeeder::class,
+            PostSeeder::class,
+            Post_likeSeeder::class,
+            Post_tagSeeder::class,
+            Blog_tagSeeder::class,
+            FollowerSeeder::class,
+            CommentSeeder::class,
         ]);
     }
 }

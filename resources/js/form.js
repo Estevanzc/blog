@@ -38,7 +38,9 @@ function password_input(element) {
 function checked(element) {
     if (element.classList.contains("checked")) {
         element.classList.remove("checked")
+        element.children[0].value = 0
     } else {
         element.classList.add("checked")
+        element.children[0].value = 1
     }
 }

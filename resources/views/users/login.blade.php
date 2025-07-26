@@ -8,14 +8,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
         integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Login</title>
+    <link rel="icon" href="{{asset("images/icon2.svg")}}">
+    <title>Unnity</title>
     @vite(["resources/css/login.css"])
 </head>
 
 <body>
     <div id="background">
-        <div id="logo">a</div>
-        <form action="">
+        <div id="logo"><img src="{{asset("images/1.svg")}}" alt=""></div>
+        <form action="{{route("auth.login")}}" method="post">
+            @csrf
             <div>
                 <h1>Welcome again !</h1>
                 <h2>Sign in to get started</h2>
@@ -38,6 +40,7 @@
             <div id="login_options">
                 <div class="option">
                     <div class="checkbox">
+                        <input type="hidden" name="remember">
                         <div class="box">
                             <div class="box_item"></div>
                         </div>

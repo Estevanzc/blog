@@ -7,28 +7,27 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Post extends Model {
+class Blog extends Model {
     use HasFactory;
     protected $fillable = [
         "title",
         "subtitle",
-        "content",
+        "description",
+        "photo",
+        "banner",
+        "user_id",
         "category_id",
-        "blog_id",
     ];
     public function category(): BelongsTo {
         return $this->belongsTo(Category::class);
     }
-    public function blog(): BelongsTo {
-        return $this->belongsTo(Blog::class);
-    }
-    public function likes(): HasMany {
-        return $this->hasMany(Post_like::class);
+    public function user(): BelongsTo {
+        return $this->belongsTo(User::class);
     }
     public function tags(): HasMany {
-        return $this->hasMany(Post_tag::class);
+        return $this->hasMany(Blog_tag::class);
     }
-    public function comments(): HasMany {
-        return $this->hasMany(Comment::class);
+    public function posts(): HasMany {
+        return $this->hasMany(Post::class);
     }
 }
