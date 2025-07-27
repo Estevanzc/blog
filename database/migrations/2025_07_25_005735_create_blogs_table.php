@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string("title");
             $table->string("subtitle");
             $table->text("description");
-            $table->string("photo")->nullable();
+            $table->string("photo")->default("profiles/default_blog_profile.jpg");
             $table->string("banner")->nullable();
             $table->foreignId("user_id")->nullable()->constrained()->onDelete("set null");
             $table->foreignId("category_id")->nullable()->constrained()->onDelete("set null");

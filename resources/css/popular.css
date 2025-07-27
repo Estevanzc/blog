@@ -1,0 +1,193 @@
+section {
+    width: 960px;
+    /*border: 2px solid black;*/
+}
+#top_post {
+    position: relative;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    border-radius: 10px;
+    color: white;
+    background-color: #f0f0f0;
+}
+#top_post>div {
+    z-index: 1;
+}
+#top_post>div:last-child {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 10px 25px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background-image: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0));
+}
+#top_post #post_background {
+    z-index: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 10px;
+}
+#info_header {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-flow: column;
+    gap: 5px 0px;
+}
+#info_header>a {
+    color: white;
+}
+#info_header>a:first-child {
+    padding: 5px 15px;
+    font-size: 0.9em;
+    font-weight: bold;
+    border-radius: 5px;
+    color: black;
+    background-color: white;
+    transition: all 0.25s ease;
+}
+#info_header>a:first-child:hover {
+    background-color: #dcdcdd;
+}
+#info_header>a:last-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.7em;
+    padding: 10px 0px;
+    gap: 0px 10px;
+}
+#info_header>a:last-child i {
+    font-size: 0.5em;
+}
+#top_post h4 {
+    font-size: 2.5em;
+}
+#top_post h5 {
+    font-size: 1em;
+}
+#post_actions {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0px 20px;
+}
+#post_actions>* {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0px 5px;
+    padding: 20px 0px 7.5px 0px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+#post_actions>* i {
+    font-size: 1.2em;
+}
+#post_actions>*:first-child:hover {
+    color: rgb(255, 112, 112);
+}
+#post_actions>*:nth-child(2):hover {
+    color: rgb(112, 162, 255);
+}
+#post_actions>*:nth-child(3):hover {
+    color: #c5c3c6;
+}
+#blog_info {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0px 10px;
+    padding: 5px 20px 5px 10px;
+    border-radius: 5px;
+    color: white;
+    transition: all 0.25s ease;
+    cursor: pointer;
+}
+#blog_info:hover {
+    background-color: rgba(255,255,255,0.2);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+#blog_profile {
+    width: 45px;
+    height: 45px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 100%;
+}
+#blog_description {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-flow: column;
+    gap: 5px 0px;
+    font-size: 1em;
+}
+#blog_description div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.7em;
+    gap: 0px 5px;
+    font-weight: bold;
+}
+#blog_description i {
+    font-size: 0.4em;
+}
+#post_options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    border: 2px solid black;
+}
+#popular_categories {
+    position: relative;
+    width: 65%;
+    height: 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 7.5px;
+    gap: 0px 10px;
+    border-radius: 20px;
+    background-color: #c5c3c6;
+}
+#bar_background {
+    z-index: 0;
+    position: absolute;
+    width: 56px;
+    height: 80%;
+    background-color: #dcdcdd;
+    border-radius: 20px;
+    transition: all 0.25s ease;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+#popular_categories .category {
+    z-index: 1;
+    flex-grow: 1;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    font-size: 0.8em;
+    font-weight: bold;
+    color: rgb(26, 26, 26);
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+#popular_categories .category:hover {
+    background-color: rgba(220, 220, 221, 0.9);
+}

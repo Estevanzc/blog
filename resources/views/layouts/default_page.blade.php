@@ -24,7 +24,7 @@
                 <i class="fa-solid fa-clock"></i>
                 <p>Recent</p>
             </a>
-            <a href="">
+            <a href="{{route("popular")}}">
                 <i class="fa-solid fa-fire"></i>
                 <p>Popular</p>
             </a>
@@ -33,13 +33,24 @@
                 <p>Explore</p>
             </a>
             <form id="search_input">
-                <input type="text" name="search" placeholder="Search something">
+                <input type="text" name="search" placeholder="Search something...">
                 <button><i class="fa-solid fa-magnifying-glass"></i></button>
             </form>
         </nav>
         <div>
+            @if (Auth::check())
+            <div id="profile">
+                <div id="img" style="background-image: url({{asset("storage/".Auth::user()->photo)}})"></div>
+                <div id="profile_info">
+                    <p>{{Auth::user()->name}}</p>
+                    <p>{{["Viewer", "Blog Owner", "Administrator"][Auth::user()->role]}}</p>
+                </div>
+                <div id="profile_button"><i class="fa-solid fa-chevron-down"></i></div>
+            </div>
+            @else
             <a href="{{route("login")}}" id="login_button">Sign in</a>
             <a href="{{route("logon")}}" id="logon_button">Create new account</a>
+            @endif
         </div>
     </header>
     @yield('content')

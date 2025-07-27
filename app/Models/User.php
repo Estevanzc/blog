@@ -28,6 +28,7 @@ class User extends Authenticatable
         "description",
         "banner",
         "photo",
+        "role",
         "ocupation_id",
     ];
     public function ocupation(): BelongsTo {
@@ -42,7 +43,6 @@ class User extends Authenticatable
     public function likes(): HasMany {
         return $this->hasMany(Post_like::class);
     }
-
     /**
      * The attributes that should be hidden for serialization.
      *

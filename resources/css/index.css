@@ -1,4 +1,7 @@
 @import url('common.css');
+body {
+    background-color: #dcdcdd;
+}
 header {
     position: fixed;
     z-index: 1;
@@ -76,6 +79,7 @@ header>div:last-child a:hover {
     align-items: center;
     border-radius: 20px;
     background-color: #cacaca;
+    transition: all 0.25s ease;
 }
 #search_input button {
     width: 12.5%;
@@ -90,7 +94,7 @@ header>div:last-child a:hover {
     transition: all 0.25s ease;
 }
 #search_input button:hover {
-    background-color: #e4e4e4;
+    background-color: #c9c9c9;
 }
 #search_input button:active {
     background-color: #c9c9c9;
@@ -105,4 +109,88 @@ header>div:last-child a:hover {
     padding: 0px 15px;
     outline: none;
     font-size: 0.8em;
+    transition: all 0.25s ease;
+}
+#search_input:hover {
+    background-color: #e4e4e4;
+}
+#search_input:has(input:focus) {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: #e4e4e4;
+}
+#profile {
+    width: 45%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    padding: 0px 10px;
+    cursor: pointer;
+}
+#profile #img {
+    width: 42.5px;
+    height: 42.5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+#profile_info {
+    padding: 0px 20px 0px 10px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-flow: column;
+}
+#profile_info p:first-child {
+    font-size: 0.9em;
+    font-weight: bold;
+}
+#profile_info p:last-child {
+    font-size: 0.7em;
+    font-weight: bold;
+    color: #46494c;
+}
+#profile_button {
+    visibility: hidden;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9em;
+}
+#profile:hover {
+    background-color: #e4e4e4;
+}
+#profile:hover #profile_button {
+    visibility: visible;
+}
+main {
+    margin-top: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+}
+#page_title {
+    padding: 20px 0px;
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    color: #0b132b;
+}
+#page_title h2 {
+    font-size: 4em;
+}
+#page_title h3 {
+    font-size: 1.2em;
+    font-weight: 500;
 }
