@@ -51,6 +51,10 @@ class UserController extends Controller
         Auth::login($user);
         return redirect()->route("index");
     }
+    public function logout() {
+        Auth::logout();
+        return redirect()->route("index");
+    }
     public function index() {
     }
     public function create() {

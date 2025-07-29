@@ -43,6 +43,12 @@ class User extends Authenticatable
     public function likes(): HasMany {
         return $this->hasMany(Post_like::class);
     }
+    public function views(): HasMany {
+        return $this->hasMany(Post_view::class);
+    }
+    public function preferences(): HasMany {
+        return $this->hasMany(Preference::class);
+    }
     /**
      * The attributes that should be hidden for serialization.
      *

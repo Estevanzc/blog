@@ -10,7 +10,7 @@
     @vite(["resources/css/index.css"])
     @yield('head')
 </head>
-<body>
+<bodyn>
     <header>
         <div>
             <a href="{{route("index")}}" id="logo"><img src="{{asset("images/1.svg")}}" alt=""></a>
@@ -53,7 +53,25 @@
             @endif
         </div>
     </header>
+    <menu id="profile_dropdown">
+        <a href="" class="profile_option">
+            <i class="fa-solid fa-user"></i>
+            <p>Your profile</p>
+        </a>
+        <div class="profile_option">
+            <i class="fa-solid fa-moon"></i>
+            <p>Dark Mode</p>
+        </div>
+        <a href="{{route("logout")}}" class="profile_option">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <p>Logout</p>
+        </a>
+    </menu>
     @yield('content')
+    <footer></footer>
     @yield('js')
+    @if (Auth::check())
+    @vite(["resources/js/profile.js"])
+    @endif
 </body>
 </html>

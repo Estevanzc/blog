@@ -24,6 +24,7 @@ class GeneralController extends Controller {
                 ->orderByDesc('usage_count')
                 ->take(5)
                 ->get(),
+            "posts" => Post::withCount("likes")->orderBy("likes_count", "desc")->limit(20)->get(),
         ]);
     }
 }

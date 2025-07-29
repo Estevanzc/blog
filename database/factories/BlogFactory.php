@@ -18,7 +18,7 @@ class BlogFactory extends Factory
      */
     public function definition(): array {
         return [
-            "title" => fake()->sentence(),
+            "title" => fake()->sentence(2),
             "subtitle" => fake()->sentence(),
             "description" => fake()->paragraph(2),
             "user_id" => User::inRandomOrder()->value("id"),

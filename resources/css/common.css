@@ -44,4 +44,5 @@ a {
 --gradient-top-left: linear-gradient(225deg, #dcdcddff, #c5c3c6ff, #46494cff, #4c5c68ff, #1985a1ff);
 --gradient-bottom-left: linear-gradient(315deg, #dcdcddff, #c5c3c6ff, #46494cff, #4c5c68ff, #1985a1ff);
 --gradient-radial: radial-gradient(#dcdcddff, #c5c3c6ff, #46494cff, #4c5c68ff, #1985a1ff);
+
 }
