@@ -54,6 +54,7 @@ class Blog extends Model
             $days_amount += $days_diff;
         }
 
+        $average_days = 0;
         if (count($date_gap) > 0) {
             $average_days = $days_amount / count($date_gap);
         }

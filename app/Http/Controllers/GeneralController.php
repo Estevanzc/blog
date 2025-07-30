@@ -27,4 +27,14 @@ class GeneralController extends Controller {
             "posts" => Post::withCount("likes")->orderBy("likes_count", "desc")->limit(20)->get(),
         ]);
     }
+    public function explore() {
+        $categories = Category::withCount("posts")->orderBy("posts_count", "desc")->limit(6)->get()->toArray();
+        $famous_posts = [];
+        foreach ($categories as $category) {
+            $famous_posts[] = Post::withCount("likes")->orderBy("likes_count", "desc")->where("category_id", $category["id"])->first();
+        }
+        return view("explore", [
+            "famous_posts" => $famous_posts,
+        ]);
+    }
 }

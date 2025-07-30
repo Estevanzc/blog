@@ -28,7 +28,7 @@
                 <i class="fa-solid fa-fire"></i>
                 <p>Popular</p>
             </a>
-            <a href="">
+            <a href="{{route("explore")}}">
                 <i class="fa-solid fa-compass"></i>
                 <p>Explore</p>
             </a>
