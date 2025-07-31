@@ -42,9 +42,11 @@ class DatabaseSeeder extends Seeder
             PostSeeder::class,
             Post_likeSeeder::class,
             Post_tagSeeder::class,
+            Post_viewSeeder::class,
             Blog_tagSeeder::class,
             FollowerSeeder::class,
             CommentSeeder::class,
+            PreferenceSeeder::class,
         ]);
     }
 }

@@ -15,7 +15,7 @@ main>* {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 100%;
     border-radius: 10px;
-    background-color: #f0f0f0;
+    background-color: white;
     overflow: hidden;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
@@ -132,7 +132,7 @@ main>* {
     align-items: stretch;
     border-radius: 5px;
     overflow: hidden;
-    background-color: #f0f0f0;
+    background-color: white;
 }
 #secondary_posts .post .post_background {
     width: 40%;
@@ -159,8 +159,12 @@ main>* {
     font-size: 0.8em !important;
 }
 #category_posts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
     padding: 30px 0px;
-    gap: 20px 0px;
+    gap: 50px 0px;
 }
 .category_list {
     width: 100%;
@@ -173,16 +177,27 @@ main>* {
 }
 .category_cover {
     width: 22.5%;
+    overflow: hidden;
+    border-radius: 5px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.category_cover div {
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-flow: column;
     padding: 20px 10px;
-    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.24);
 }
 .category_cover h3 {
     padding: 0px 10px;
     font-size: 2.3em;
+    color: white;
 }
 .category_cover a {
     width: 80%;
@@ -215,6 +230,7 @@ main>* {
     background-size: cover;
     border-radius: 5px;
     overflow: hidden;
+    transition: all 0.25s ease;
 }
 .post_list .post div {
     width: 100%;
@@ -231,12 +247,13 @@ main>* {
     color: white;
 }
 .post_list .post a:first-child {
-    padding: 5px 10px;
-    border-radius: 5px;
-    background-color: rgba(0, 0, 0, 0.24);
-    transition: all 0.25s ease;
+    padding: 5px 15px;
+    border-radius: 20px;
     font-size: 0.8em;
     font-weight: bold;
+    color: white;
+    backdrop-filter: blur(5px);
+    background-color: rgba(0,0,0,0.4);
 }
 .post_list .post a:first-child:hover {
     background-color: rgba(0, 0, 0, 0.34);
@@ -248,3 +265,116 @@ main>* {
 .post_list .post a:last-child {
     font-size: 0.9em;
 }
+#all_posts {
+    padding-top: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-flow: column;
+    gap: 10px 0px;
+}
+#all_posts h3 {
+    align-self: flex-start;
+    font-size: 2em;
+}
+#post_list {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+#post_list .post {
+    height: 350px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-flow: column;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    background-color: white;
+}
+#post_list .post:hover {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+#post_list .post .post_banner {
+    width: 100%;
+    height: 55%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    padding: 10px;
+}
+#post_list .post .post_category {
+    width: auto;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: bold;
+    color: white;
+    backdrop-filter: blur(5px);
+    background-color: rgba(0,0,0,0.4);
+}
+#post_list .post .post_info {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-flow: column;
+    padding: 5px;
+}
+#post_list .post .post_info>div:first-child {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0px 5px;
+    padding: 0px 5px;
+    font-size: 0.75em;
+    color: #3b3b3b;
+    font-weight: bold;
+}
+#post_list .post .post_info>div:first-child i {
+    font-size: 0.4em;
+}
+#post_list .post .post_info>a:last-child {
+    padding: 5px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-flow: column;
+    gap: 5px 0px;
+}
+#post_list .post .post_info>a:last-child h4 {
+    font-size: 1.2em;
+    font-weight: 500;
+}
+#post_list .post .post_info>a:last-child p {
+    font-size: 0.9em;
+}
+#post_list .post .post_owner {
+    width: 100%;
+    padding: 5px 15px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0px 7.5px;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+#post_list .post .blog_profile {
+    width: 37.5px;
+    height: 37.5px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 100%;
+}
+#load_button {
+    margin-bottom: 20px;
+}
+

@@ -20,10 +20,6 @@
                 <i class="fa-solid fa-house"></i>
                 <p>Home</p>
             </a>
-            <a href="">
-                <i class="fa-solid fa-clock"></i>
-                <p>Recent</p>
-            </a>
             <a href="{{route("popular")}}">
                 <i class="fa-solid fa-fire"></i>
                 <p>Popular</p>
@@ -32,10 +28,16 @@
                 <i class="fa-solid fa-compass"></i>
                 <p>Explore</p>
             </a>
-            <form id="search_input">
+            <a href="">
+                <i class="fa-solid fa-clock"></i>
+                <p>Your blogs</p>
+            </a>
+            @if (!request()->routeIs("index"))
+            <form id="search_input" method="get" action="">
                 <input type="text" name="search" placeholder="Search something...">
                 <button><i class="fa-solid fa-magnifying-glass"></i></button>
             </form>
+            @endif
         </nav>
         <div>
             @if (Auth::check())

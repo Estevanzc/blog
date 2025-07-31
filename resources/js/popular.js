@@ -6,6 +6,12 @@ for (let i = 0; i <= category.length-1; i ++) {
     })
 }
 function filter(element) {
+    for (let i = 0; i <= category.length-1; i ++) {
+        if (category[i].classList.contains("selected")) {
+            category[i].classList.remove("selected")
+        }
+    }
+    element.classList.add("selected")
     let element_data = element.getBoundingClientRect();
     let element_parent_data = element.parentNode.getBoundingClientRect();
     bar_background.style.marginTop = element_data.top - element_parent_data.top + "px"

@@ -35,6 +35,9 @@ class Post extends Model {
     public function views(): HasMany {
         return $this->hasMany(Post_view::class);
     }
+    public function keys(): HasMany {
+        return $this->hasMany(Key_word::class);
+    }
     public function date_formated() {
         $post_data = Carbon::createFromDate($this->created_at);
         $current_data = Carbon::now();

@@ -90,7 +90,7 @@
             <p>Load more</p>
             <img src="{{asset("images/loading_icon.svg")}}" alt="">
         </button>
-        <a href="" id="scroll_end">
+        <a href="{{route("explore")}}" id="scroll_end">
             <div>
                 <div>
                     <i class="fa-solid fa-compass"></i>
