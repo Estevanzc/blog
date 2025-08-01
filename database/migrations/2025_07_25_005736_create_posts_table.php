@@ -19,6 +19,7 @@ return new class extends Migration
             $table->text("content");
             $table->string("banner")->default("posts/default_post_banner.jpg");
             $table->foreignId("category_id")->nullable()->constrained()->onDelete("set null");
+            $table->foreignId("user_id")->nullable()->constrained()->onDelete("set null");
             $table->foreignId("blog_id")->constrained()->onDelete("cascade");
             $table->timestamps();
         });

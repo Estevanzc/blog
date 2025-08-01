@@ -48,6 +48,9 @@ class DatabaseSeeder extends Seeder
             FollowerSeeder::class,
             CommentSeeder::class,
             PreferenceSeeder::class,
+            MemberSeeder::class,
+            TrophySeeder::class,
+            UserTrophySeeder::class,
         ]);
     }
 }

@@ -35,6 +35,9 @@ class Blog extends Model
     public function followers(): HasMany {
         return $this->hasMany(Follower::class);
     }
+    public function members(): HasMany {
+        return $this->hasMany(Member::class);
+    }
     public function activity() {
         $last_posts = Post::where("blog_id", $this->id)
             ->orderByDesc("created_at")

@@ -25,6 +25,7 @@ class User extends Authenticatable
         "password",
         "birth",
         "sex",
+        "dark_mode",
         "description",
         "banner",
         "photo",
@@ -48,6 +49,12 @@ class User extends Authenticatable
     }
     public function preferences(): HasMany {
         return $this->hasMany(Preference::class);
+    }
+    public function members(): HasMany {
+        return $this->hasMany(Member::class);
+    }
+    public function posts(): HasMany {
+        return $this->hasMany(Post::class);
     }
     /**
      * The attributes that should be hidden for serialization.

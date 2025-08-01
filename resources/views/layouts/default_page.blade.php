@@ -57,7 +57,7 @@
     </header>
     @if (Auth::check())
     <menu id="profile_dropdown">
-        <a href="" class="profile_option">
+        <a href="{{route("profile")}}" class="profile_option">
             <i class="fa-solid fa-user"></i>
             <p>Your profile</p>
         </a>

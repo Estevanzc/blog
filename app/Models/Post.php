@@ -16,6 +16,7 @@ class Post extends Model {
         "summary",
         "content",
         "category_id",
+        "user_id",
         "blog_id",
     ];
     public function category(): BelongsTo {
@@ -23,6 +24,9 @@ class Post extends Model {
     }
     public function blog(): BelongsTo {
         return $this->belongsTo(Blog::class);
+    }
+    public function user(): BelongsTo {
+        return $this->belongsTo(User::class);
     }
     public function likes(): HasMany {
         return $this->hasMany(Post_like::class);
