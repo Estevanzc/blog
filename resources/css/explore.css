@@ -39,7 +39,7 @@ main>* {
     padding: 20px 25px;
     display: flex;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: column;
     gap: 5px 0px;
 }
@@ -377,4 +377,50 @@ main>* {
 #load_button {
     margin-bottom: 20px;
 }
-
+.dark #main_post {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+.dark #main_post .post_category {
+    color: #dadada;
+}
+.dark .main_desc a:nth-child(2) {
+    color: #f0f0f0;
+}
+.dark .main_desc a:last-child {
+    color: #f0f0f0;
+}
+.dark .last_desc {
+    color: #dadada;
+}
+.dark .blog_info {
+    color: #f0f0f0;
+}
+.dark .blog_info:hover {
+    background-color: rgba(255,255,255,0.2);
+}
+.dark .blog_description>div {
+    color: #dadada;
+}
+.dark #secondary_posts .post {
+    color: #f0f0f0;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+.dark #secondary_posts .post .post_desc p {
+    color: #dadada;
+}
+.dark #all_posts h3 {
+    color: #f0f0f0;
+}
+.dark #post_list .post {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+.dark #post_list .post:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+.dark #post_list .post_info *, .post_owner {
+    color: #f0f0f0;
+}
+.dark #post_list .post_info>div:first-child {
+    color: #acacac !important;
+    font-weight: 500;
+}

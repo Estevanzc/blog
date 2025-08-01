@@ -35,6 +35,30 @@ class GeneralController extends Controller {
         }
         return view("explore", [
             "famous_posts" => $famous_posts,
+            "arts" => Post::with('category')
+                ->whereHas('category', function ($query) {
+                    $query->whereIn('name', ['Arts', 'Culture']);
+                })->get(),
+            "tech" => Post::with('category')
+                ->whereHas('category', function ($query) {
+                    $query->whereIn('name', ['Tech', 'Science']);
+                })->get(),
+            "health" => Post::with('category')
+                ->whereHas('category', function ($query) {
+                    $query->whereIn('name', ['Health', 'Food']);
+                })->get(),
+            "nature" => Post::with('category')
+                ->whereHas('category', function ($query) {
+                    $query->where('name', 'Nature');
+                })->get(),
+            "politics" => Post::with('category')
+                ->whereHas('category', function ($query) {
+                    $query->where('name', 'Politics');
+                })->get(),
+            "news" => Post::with('category')
+                ->whereHas('category', function ($query) {
+                    $query->where('name', 'News');
+                })->get(),
         ]);
     }
 }

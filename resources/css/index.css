@@ -259,18 +259,6 @@ footer {
 .opened i {
     rotate: 180deg;
 }
-body.dark header {
-    background-color: rgba(0,0,0,0.8);
-}
-body.dark header:hover {
-    background-color: rgba(0,0,0,1);
-}
-body.dark header>nav a {
-    color: white;
-}
-body.dark header>nav a:hover {
-    background-color: rgba(255, 255, 255, 0.3);
-}
 #load_button {
     margin-top: 25px;
     width: 1100px;
@@ -307,4 +295,66 @@ body.dark header>nav a:hover {
 .loading:hover {
     opacity: 1;
     box-shadow: none;
+}
+.dark {
+    background-color: #353535;
+}
+.dark header {
+    background-color: rgba(26, 26, 26, 0.8);
+}
+.dark header * {
+    color: #dadada;
+}
+.dark #search_input {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    border: 1.5px solid rgba(255,255,255,0.3);
+}
+.dark #search_input button:hover {
+    background-color: rgba(255,255,255,0.3);
+}
+.dark #search_input button:active {
+    background-color: rgba(255,255,255,0.2);
+}
+.dark #search_input:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+.dark #search_input:has(input:focus) {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+.dark #profile_info p:last-child {
+    color: #dadada;
+}
+.dark header>nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.dark #load_button {
+    color: #dadada;
+    border-color: #dadada;
+}
+.dark #profile:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.dark #profile_dropdown {
+    background-color: #4d5053;
+}
+.dark #profile_dropdown>* {
+    color: white;
+    background-color: #4d5053;
+}
+.dark #profile_dropdown>*:hover {
+    background-color: #353535;
+}
+.dark #profile_dropdown>*:first-child {
+    border-color: #353535;
+}
+.dark #profile_dropdown>*:last-child {
+    border-color: #353535;
+}
+.dark .opened {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+}
+.dark #page_title {
+    color: #dadada;
 }

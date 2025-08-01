@@ -31,6 +31,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'admin@gmail.com',
             'password' => 'admin',
             'birth' => '2008-02-26',
+            'dark_mode' => true,
             'role' => 2,
         ]);
         $this->call([

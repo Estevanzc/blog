@@ -10,10 +10,10 @@
     @vite(["resources/css/index.css"])
     @yield('head')
 </head>
-<bodyn>
+<body @if (Auth::check() && Auth::user()->dark_mode) class="dark" @endif>
     <header>
         <div>
-            <a href="{{route("index")}}" id="logo"><img src="{{asset("images/1.svg")}}" alt=""></a>
+            <a href="{{route("index")}}" id="logo"><img src="{{asset("images/".(Auth::check() ? (Auth::user()->dark_mode ? "2.svg" : "1.svg") : "1.svg"))}}" alt=""></a>
         </div>
         <nav>
             <a href="{{route("index")}}">
@@ -55,20 +55,27 @@
             @endif
         </div>
     </header>
+    @if (Auth::check())
     <menu id="profile_dropdown">
         <a href="" class="profile_option">
             <i class="fa-solid fa-user"></i>
             <p>Your profile</p>
         </a>
-        <div class="profile_option">
+        <div class="profile_option" data-dark_mode="{{Auth::user()->dark_mode ? 1 : 0}}">
+            @if (Auth::user()->dark_mode)
+            <i class="fa-solid fa-sun"></i>
+            <p>White Mode</p>
+            @else
             <i class="fa-solid fa-moon"></i>
             <p>Dark Mode</p>
+            @endif
         </div>
         <a href="{{route("logout")}}" class="profile_option">
             <i class="fa-solid fa-right-from-bracket"></i>
             <p>Logout</p>
         </a>
     </menu>
+    @endif
     @yield('content')
     <footer></footer>
     @yield('js')

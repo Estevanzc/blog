@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string("title");
             $table->string("subtitle");
+            $table->text("summary");
             $table->text("content");
             $table->string("banner")->default("posts/default_post_banner.jpg");
             $table->foreignId("category_id")->nullable()->constrained()->onDelete("set null");

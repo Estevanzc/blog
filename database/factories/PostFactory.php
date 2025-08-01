@@ -21,6 +21,7 @@ class PostFactory extends Factory
         return [
             "title" => fake()->sentence(2),
             "subtitle" => fake()->sentence(),
+            "summary" => fake()->sentence(15),
             "content" => fake()->paragraph(2),
             "blog_id" => Blog::inRandomOrder()->value("id"),
             "category_id" => Category::inRandomOrder()->value("id"),

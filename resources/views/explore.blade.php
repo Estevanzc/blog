@@ -11,84 +11,44 @@
         <section id="famous_posts">
             <div id="main_post" class="post">
                 <a href="" class="post_background"
-                    style="background-image: url({{asset("storage/posts/default_post_banner.jpg")}})">
+                    style="background-image: url({{asset("storage/" . $famous_posts[0]->banner)}})">
                 </a>
                 <div class="post_desc">
                     <div class="main_desc">
-                        <a href="" class="post_category">Category</a>
-                        <a href="">Post title texto</a>
-                        <a href="">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus hic, amet, in sit,
-                            quod cupiditate eaque incidunt nemo enim placeat sunt</a>
+                        <a href="" class="post_category">{{$famous_posts[0]->category->name}}</a>
+                        <a href="">{{$famous_posts[0]->title}}</a>
+                        <a href="">{{$famous_posts[0]->summary}}</a>
                     </div>
                     <a href="" class="last_desc">
-                        <p>15h ago</p>
-                        <p>5min reading</p>
+                        <p>{{$famous_posts[0]->date_formated()}}</p>
+                        <p>{{$famous_posts[0]->text_size()}}</p>
                     </a>
                     <a href="" class="blog_info">
-                        <div class="blog_profile"
-                            style="background-image: url({{asset("storage/profiles/default_blog_profile.jpg")}})"></div>
+                        <div class="blog_profile" style="background-image: url({{asset("storage/profiles/default_blog_profile.jpg")}})"></div>
                         <div class="blog_description">
-                            <p>blog name example</p>
+                            <p>{{$famous_posts[0]->blog->title}}</p>
                             <div>
-                                <p>225 posts</p>
+                                <p>{{$famous_posts[0]->blog->posts->count()}} posts</p>
                                 <i class="fa-solid fa-circle"></i>
-                                <p>Daily activity</p>
+                                <p>{{$famous_posts[0]->blog->activity()}}</p>
                             </div>
                         </div>
                     </a>
                 </div>
             </div>
             <div id="secondary_posts">
-                <a href="" class="post">
-                    <div class="post_background"
-                        style="background-image: url({{asset("storage/posts/default_post_banner.jpg")}})">
-                        <div class="post_category"></div>
-                    </div>
-                    <div class="post_desc">
-                        <h4>Post title texto just for a bit of test</h4>
-                        <p>45min ago</p>
-                    </div>
-                </a>
-                <a href="" class="post">
-                    <div class="post_background"
-                        style="background-image: url({{asset("storage/posts/default_post_banner.jpg")}})">
-                        <div class="post_category"></div>
-                    </div>
-                    <div class="post_desc">
-                        <h4>Post title texto just for a bit of test</h4>
-                        <p>45min ago</p>
-                    </div>
-                </a>
-                <a href="" class="post">
-                    <div class="post_background"
-                        style="background-image: url({{asset("storage/posts/default_post_banner.jpg")}})">
-                        <div class="post_category"></div>
-                    </div>
-                    <div class="post_desc">
-                        <h4>Post title texto just for a bit of test</h4>
-                        <p>45min ago</p>
-                    </div>
-                </a>
-                <a href="" class="post">
-                    <div class="post_background"
-                        style="background-image: url({{asset("storage/posts/default_post_banner.jpg")}})">
-                        <div class="post_category"></div>
-                    </div>
-                    <div class="post_desc">
-                        <h4>Post title texto just for a bit of test</h4>
-                        <p>45min ago</p>
-                    </div>
-                </a>
-                <a href="" class="post">
-                    <div class="post_background"
-                        style="background-image: url({{asset("storage/posts/default_post_banner.jpg")}})">
-                        <div class="post_category"></div>
-                    </div>
-                    <div class="post_desc">
-                        <h4>Post title texto just for a bit of test</h4>
-                        <p>45min ago</p>
-                    </div>
-                </a>
+                @foreach ($famous_posts as $post)
+                    @if ($post->id != $famous_posts[0]->id)
+                        <a href="" class="post">
+                            <div class="post_background" style="background-image: url({{asset("storage/" . $post->banner)}})">
+                            </div>
+                            <div class="post_desc">
+                                <h4>{{$post->title}}</h4>
+                                <p>{{$post->date_formated()}}</p>
+                            </div>
+                        </a>
+                    @endif
+                @endforeach
             </div>
         </section>
         <section id="category_posts">
@@ -103,41 +63,15 @@
                     </div>
                 </div>
                 <div class="post_list">
-                    <div class="post" style="background-image: url({{asset("storage/posts/default_post_banner.jpg")}})">
-                        <div>
-                            <a href="" class="post_category">Category</a>
-                            <a href="">Post title</a>
-                            <a href="">Post small description just ot show a bit fo the contenta sdasdasd asdasd dsa sad asdasdasd asd asd...</a>
+                    @foreach ($arts as $post)
+                        <div class="post" style="background-image: url({{asset("storage/" . $post->banner)}})">
+                            <div>
+                                <a href="" class="post_category">{{$post->category->name}}</a>
+                                <a href="">{{$post->title}}</a>
+                                <a href="">{{$post->summary}}...</a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="post" style="background-image: url({{asset("storage/posts/default_post_banner.jpg")}})">
-                        <div>
-                            <a href="" class="post_category">Category</a>
-                            <a href="">Post title</a>
-                            <a href="">Post small description just ot show a bit fo the contenta sdasdasd asdasd dsa sad asdasdasd asd asd...</a>
-                        </div>
-                    </div>
-                    <div class="post" style="background-image: url({{asset("storage/posts/default_post_banner.jpg")}})">
-                        <div>
-                            <a href="" class="post_category">Category</a>
-                            <a href="">Post title</a>
-                            <a href="">Post small description just ot show a bit fo the contenta sdasdasd asdasd dsa sad asdasdasd asd asd...</a>
-                        </div>
-                    </div>
-                    <div class="post" style="background-image: url({{asset("storage/posts/default_post_banner.jpg")}})">
-                        <div>
-                            <a href="" class="post_category">Category</a>
-                            <a href="">Post title</a>
-                            <a href="">Post small description just ot show a bit fo the contenta sdasdasd asdasd dsa sad asdasdasd asd asd...</a>
-                        </div>
-                    </div>
-                    <div class="post" style="background-image: url({{asset("storage/posts/default_post_banner.jpg")}})">
-                        <div>
-                            <a href="" class="post_category">Category</a>
-                            <a href="">Post title</a>
-                            <a href="">Post small description just ot show a bit fo the contenta sdasdasd asdasd dsa sad asdasdasd asd asd...</a>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
             <div class="category_list">
@@ -151,41 +85,15 @@
                     </div>
                 </div>
                 <div class="post_list">
-                    <div class="post" style="background-image: url({{asset("storage/posts/default_post_banner.jpg")}})">
-                        <div>
-                            <a href="" class="post_category">Category</a>
-                            <a href="">Post title</a>
-                            <a href="">Post small description just ot show a bit fo the contenta sdasdasd asdasd dsa sad asdasdasd asd asd...</a>
+                    @foreach ($tech as $post)
+                        <div class="post" style="background-image: url({{asset("storage/" . $post->banner)}})">
+                            <div>
+                                <a href="" class="post_category">{{$post->category->name}}</a>
+                                <a href="">{{$post->title}}</a>
+                                <a href="">{{$post->summary}}...</a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="post" style="background-image: url({{asset("storage/posts/default_post_banner.jpg")}})">
-                        <div>
-                            <a href="" class="post_category">Category</a>
-                            <a href="">Post title</a>
-                            <a href="">Post small description just ot show a bit fo the contenta sdasdasd asdasd dsa sad asdasdasd asd asd...</a>
-                        </div>
-                    </div>
-                    <div class="post" style="background-image: url({{asset("storage/posts/default_post_banner.jpg")}})">
-                        <div>
-                            <a href="" class="post_category">Category</a>
-                            <a href="">Post title</a>
-                            <a href="">Post small description just ot show a bit fo the contenta sdasdasd asdasd dsa sad asdasdasd asd asd...</a>
-                        </div>
-                    </div>
-                    <div class="post" style="background-image: url({{asset("storage/posts/default_post_banner.jpg")}})">
-                        <div>
-                            <a href="" class="post_category">Category</a>
-                            <a href="">Post title</a>
-                            <a href="">Post small description just ot show a bit fo the contenta sdasdasd asdasd dsa sad asdasdasd asd asd...</a>
-                        </div>
-                    </div>
-                    <div class="post" style="background-image: url({{asset("storage/posts/default_post_banner.jpg")}})">
-                        <div>
-                            <a href="" class="post_category">Category</a>
-                            <a href="">Post title</a>
-                            <a href="">Post small description just ot show a bit fo the contenta sdasdasd asdasd dsa sad asdasdasd asd asd...</a>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
             <div class="category_list">
@@ -199,41 +107,15 @@
                     </div>
                 </div>
                 <div class="post_list">
-                    <div class="post" style="background-image: url({{asset("storage/posts/default_post_banner.jpg")}})">
-                        <div>
-                            <a href="" class="post_category">Category</a>
-                            <a href="">Post title</a>
-                            <a href="">Post small description just ot show a bit fo the contenta sdasdasd asdasd dsa sad asdasdasd asd asd...</a>
+                    @foreach ($health as $post)
+                        <div class="post" style="background-image: url({{asset("storage/" . $post->banner)}})">
+                            <div>
+                                <a href="" class="post_category">{{$post->category->name}}</a>
+                                <a href="">{{$post->title}}</a>
+                                <a href="">{{$post->summary}}...</a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="post" style="background-image: url({{asset("storage/posts/default_post_banner.jpg")}})">
-                        <div>
-                            <a href="" class="post_category">Category</a>
-                            <a href="">Post title</a>
-                            <a href="">Post small description just ot show a bit fo the contenta sdasdasd asdasd dsa sad asdasdasd asd asd...</a>
-                        </div>
-                    </div>
-                    <div class="post" style="background-image: url({{asset("storage/posts/default_post_banner.jpg")}})">
-                        <div>
-                            <a href="" class="post_category">Category</a>
-                            <a href="">Post title</a>
-                            <a href="">Post small description just ot show a bit fo the contenta sdasdasd asdasd dsa sad asdasdasd asd asd...</a>
-                        </div>
-                    </div>
-                    <div class="post" style="background-image: url({{asset("storage/posts/default_post_banner.jpg")}})">
-                        <div>
-                            <a href="" class="post_category">Category</a>
-                            <a href="">Post title</a>
-                            <a href="">Post small description just ot show a bit fo the contenta sdasdasd asdasd dsa sad asdasdasd asd asd...</a>
-                        </div>
-                    </div>
-                    <div class="post" style="background-image: url({{asset("storage/posts/default_post_banner.jpg")}})">
-                        <div>
-                            <a href="" class="post_category">Category</a>
-                            <a href="">Post title</a>
-                            <a href="">Post small description just ot show a bit fo the contenta sdasdasd asdasd dsa sad asdasdasd asd asd...</a>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
             <div class="category_list">
@@ -247,41 +129,15 @@
                     </div>
                 </div>
                 <div class="post_list">
-                    <div class="post" style="background-image: url({{asset("storage/posts/default_post_banner.jpg")}})">
-                        <div>
-                            <a href="" class="post_category">Category</a>
-                            <a href="">Post title</a>
-                            <a href="">Post small description just ot show a bit fo the contenta sdasdasd asdasd dsa sad asdasdasd asd asd...</a>
+                    @foreach ($nature as $post)
+                        <div class="post" style="background-image: url({{asset("storage/" . $post->banner)}})">
+                            <div>
+                                <a href="" class="post_category">{{$post->category->name}}</a>
+                                <a href="">{{$post->title}}</a>
+                                <a href="">{{$post->summary}}...</a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="post" style="background-image: url({{asset("storage/posts/default_post_banner.jpg")}})">
-                        <div>
-                            <a href="" class="post_category">Category</a>
-                            <a href="">Post title</a>
-                            <a href="">Post small description just ot show a bit fo the contenta sdasdasd asdasd dsa sad asdasdasd asd asd...</a>
-                        </div>
-                    </div>
-                    <div class="post" style="background-image: url({{asset("storage/posts/default_post_banner.jpg")}})">
-                        <div>
-                            <a href="" class="post_category">Category</a>
-                            <a href="">Post title</a>
-                            <a href="">Post small description just ot show a bit fo the contenta sdasdasd asdasd dsa sad asdasdasd asd asd...</a>
-                        </div>
-                    </div>
-                    <div class="post" style="background-image: url({{asset("storage/posts/default_post_banner.jpg")}})">
-                        <div>
-                            <a href="" class="post_category">Category</a>
-                            <a href="">Post title</a>
-                            <a href="">Post small description just ot show a bit fo the contenta sdasdasd asdasd dsa sad asdasdasd asd asd...</a>
-                        </div>
-                    </div>
-                    <div class="post" style="background-image: url({{asset("storage/posts/default_post_banner.jpg")}})">
-                        <div>
-                            <a href="" class="post_category">Category</a>
-                            <a href="">Post title</a>
-                            <a href="">Post small description just ot show a bit fo the contenta sdasdasd asdasd dsa sad asdasdasd asd asd...</a>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
             <div class="category_list">
@@ -295,41 +151,15 @@
                     </div>
                 </div>
                 <div class="post_list">
-                    <div class="post" style="background-image: url({{asset("storage/posts/default_post_banner.jpg")}})">
-                        <div>
-                            <a href="" class="post_category">Category</a>
-                            <a href="">Post title</a>
-                            <a href="">Post small description just ot show a bit fo the contenta sdasdasd asdasd dsa sad asdasdasd asd asd...</a>
+                    @foreach ($politics as $post)
+                        <div class="post" style="background-image: url({{asset("storage/" . $post->banner)}})">
+                            <div>
+                                <a href="" class="post_category">{{$post->category->name}}</a>
+                                <a href="">{{$post->title}}</a>
+                                <a href="">{{$post->summary}}...</a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="post" style="background-image: url({{asset("storage/posts/default_post_banner.jpg")}})">
-                        <div>
-                            <a href="" class="post_category">Category</a>
-                            <a href="">Post title</a>
-                            <a href="">Post small description just ot show a bit fo the contenta sdasdasd asdasd dsa sad asdasdasd asd asd...</a>
-                        </div>
-                    </div>
-                    <div class="post" style="background-image: url({{asset("storage/posts/default_post_banner.jpg")}})">
-                        <div>
-                            <a href="" class="post_category">Category</a>
-                            <a href="">Post title</a>
-                            <a href="">Post small description just ot show a bit fo the contenta sdasdasd asdasd dsa sad asdasdasd asd asd...</a>
-                        </div>
-                    </div>
-                    <div class="post" style="background-image: url({{asset("storage/posts/default_post_banner.jpg")}})">
-                        <div>
-                            <a href="" class="post_category">Category</a>
-                            <a href="">Post title</a>
-                            <a href="">Post small description just ot show a bit fo the contenta sdasdasd asdasd dsa sad asdasdasd asd asd...</a>
-                        </div>
-                    </div>
-                    <div class="post" style="background-image: url({{asset("storage/posts/default_post_banner.jpg")}})">
-                        <div>
-                            <a href="" class="post_category">Category</a>
-                            <a href="">Post title</a>
-                            <a href="">Post small description just ot show a bit fo the contenta sdasdasd asdasd dsa sad asdasdasd asd asd...</a>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
             <div class="category_list">
@@ -343,41 +173,15 @@
                     </div>
                 </div>
                 <div class="post_list">
-                    <div class="post" style="background-image: url({{asset("storage/posts/default_post_banner.jpg")}})">
-                        <div>
-                            <a href="" class="post_category">Category</a>
-                            <a href="">Post title</a>
-                            <a href="">Post small description just ot show a bit fo the contenta sdasdasd asdasd dsa sad asdasdasd asd asd...</a>
+                    @foreach ($news as $post)
+                        <div class="post" style="background-image: url({{asset("storage/" . $post->banner)}})">
+                            <div>
+                                <a href="" class="post_category">{{$post->category->name}}</a>
+                                <a href="">{{$post->title}}</a>
+                                <a href="">{{$post->summary}}...</a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="post" style="background-image: url({{asset("storage/posts/default_post_banner.jpg")}})">
-                        <div>
-                            <a href="" class="post_category">Category</a>
-                            <a href="">Post title</a>
-                            <a href="">Post small description just ot show a bit fo the contenta sdasdasd asdasd dsa sad asdasdasd asd asd...</a>
-                        </div>
-                    </div>
-                    <div class="post" style="background-image: url({{asset("storage/posts/default_post_banner.jpg")}})">
-                        <div>
-                            <a href="" class="post_category">Category</a>
-                            <a href="">Post title</a>
-                            <a href="">Post small description just ot show a bit fo the contenta sdasdasd asdasd dsa sad asdasdasd asd asd...</a>
-                        </div>
-                    </div>
-                    <div class="post" style="background-image: url({{asset("storage/posts/default_post_banner.jpg")}})">
-                        <div>
-                            <a href="" class="post_category">Category</a>
-                            <a href="">Post title</a>
-                            <a href="">Post small description just ot show a bit fo the contenta sdasdasd asdasd dsa sad asdasdasd asd asd...</a>
-                        </div>
-                    </div>
-                    <div class="post" style="background-image: url({{asset("storage/posts/default_post_banner.jpg")}})">
-                        <div>
-                            <a href="" class="post_category">Category</a>
-                            <a href="">Post title</a>
-                            <a href="">Post small description just ot show a bit fo the contenta sdasdasd asdasd dsa sad asdasdasd asd asd...</a>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </section>
@@ -385,105 +189,105 @@
             <h3>All the posts</h3>
             <div id="post_list">
                 <div class="post">
-                <a href="" class="post_banner" style="background-image: url({{asset("storage/posts/default_post_banner.jpg")}})">
-                    <div class="post_category">category</div>
-                </a>
-                <div class="post_info">
-                    <div>
-                        <p>25min ago</p>
-                        <i class="fa-solid fa-circle"></i>
-                        <p>5min reading</p>
+                    <a href="" class="post_banner" style="background-image: url({{asset("storage/posts/default_post_banner.jpg")}})">
+                        <div class="post_category">category</div>
+                    </a>
+                    <div class="post_info">
+                        <div>
+                            <p>25min ago</p>
+                            <i class="fa-solid fa-circle"></i>
+                            <p>5min reading</p>
+                        </div>
+                        <a href="">
+                            <h4 id="post_title">post small title</h4>
+                            <p>tiny post descriptoin just for a bit content...</p>
+                        </a>
                     </div>
-                    <a href="">
-                        <h4 id="post_title">post small title</h4>
-                        <p>tiny post descriptoin just for a bit content...</p>
+                    <a href="" class="post_owner">
+                        <div class="blog_profile" style="background-image: url({{asset("storage/profiles/default_blog_profile.jpg")}})"></div>
+                        <p>blog title</p>
                     </a>
                 </div>
-                <a href="" class="post_owner">
-                    <div class="blog_profile" style="background-image: url({{asset("storage/profiles/default_blog_profile.jpg")}})"></div>
-                    <p>blog title</p>
-                </a>
-            </div>
                 <div class="post">
-                <a href="" class="post_banner" style="background-image: url({{asset("storage/posts/default_post_banner.jpg")}})">
-                    <div class="post_category">category</div>
-                </a>
-                <div class="post_info">
-                    <div>
-                        <p>25min ago</p>
-                        <i class="fa-solid fa-circle"></i>
-                        <p>5min reading</p>
+                    <a href="" class="post_banner" style="background-image: url({{asset("storage/posts/default_post_banner.jpg")}})">
+                        <div class="post_category">category</div>
+                    </a>
+                    <div class="post_info">
+                        <div>
+                            <p>25min ago</p>
+                            <i class="fa-solid fa-circle"></i>
+                            <p>5min reading</p>
+                        </div>
+                        <a href="">
+                            <h4 id="post_title">post small title</h4>
+                            <p>tiny post descriptoin just for a bit content...</p>
+                        </a>
                     </div>
-                    <a href="">
-                        <h4 id="post_title">post small title</h4>
-                        <p>tiny post descriptoin just for a bit content...</p>
+                    <a href="" class="post_owner">
+                        <div class="blog_profile" style="background-image: url({{asset("storage/profiles/default_blog_profile.jpg")}})"></div>
+                        <p>blog title</p>
                     </a>
                 </div>
-                <a href="" class="post_owner">
-                    <div class="blog_profile" style="background-image: url({{asset("storage/profiles/default_blog_profile.jpg")}})"></div>
-                    <p>blog title</p>
-                </a>
-            </div>
                 <div class="post">
-                <a href="" class="post_banner" style="background-image: url({{asset("storage/posts/default_post_banner.jpg")}})">
-                    <div class="post_category">category</div>
-                </a>
-                <div class="post_info">
-                    <div>
-                        <p>25min ago</p>
-                        <i class="fa-solid fa-circle"></i>
-                        <p>5min reading</p>
+                    <a href="" class="post_banner" style="background-image: url({{asset("storage/posts/default_post_banner.jpg")}})">
+                        <div class="post_category">category</div>
+                    </a>
+                    <div class="post_info">
+                        <div>
+                            <p>25min ago</p>
+                            <i class="fa-solid fa-circle"></i>
+                            <p>5min reading</p>
+                        </div>
+                        <a href="">
+                            <h4 id="post_title">post small title</h4>
+                            <p>tiny post descriptoin just for a bit content...</p>
+                        </a>
                     </div>
-                    <a href="">
-                        <h4 id="post_title">post small title</h4>
-                        <p>tiny post descriptoin just for a bit content...</p>
+                    <a href="" class="post_owner">
+                        <div class="blog_profile" style="background-image: url({{asset("storage/profiles/default_blog_profile.jpg")}})"></div>
+                        <p>blog title</p>
                     </a>
                 </div>
-                <a href="" class="post_owner">
-                    <div class="blog_profile" style="background-image: url({{asset("storage/profiles/default_blog_profile.jpg")}})"></div>
-                    <p>blog title</p>
-                </a>
-            </div>
                 <div class="post">
-                <a href="" class="post_banner" style="background-image: url({{asset("storage/posts/default_post_banner.jpg")}})">
-                    <div class="post_category">category</div>
-                </a>
-                <div class="post_info">
-                    <div>
-                        <p>25min ago</p>
-                        <i class="fa-solid fa-circle"></i>
-                        <p>5min reading</p>
+                    <a href="" class="post_banner" style="background-image: url({{asset("storage/posts/default_post_banner.jpg")}})">
+                        <div class="post_category">category</div>
+                    </a>
+                    <div class="post_info">
+                        <div>
+                            <p>25min ago</p>
+                            <i class="fa-solid fa-circle"></i>
+                            <p>5min reading</p>
+                        </div>
+                        <a href="">
+                            <h4 id="post_title">post small title</h4>
+                            <p>tiny post descriptoin just for a bit content...</p>
+                        </a>
                     </div>
-                    <a href="">
-                        <h4 id="post_title">post small title</h4>
-                        <p>tiny post descriptoin just for a bit content...</p>
+                    <a href="" class="post_owner">
+                        <div class="blog_profile" style="background-image: url({{asset("storage/profiles/default_blog_profile.jpg")}})"></div>
+                        <p>blog title</p>
                     </a>
                 </div>
-                <a href="" class="post_owner">
-                    <div class="blog_profile" style="background-image: url({{asset("storage/profiles/default_blog_profile.jpg")}})"></div>
-                    <p>blog title</p>
-                </a>
-            </div>
                 <div class="post">
-                <a href="" class="post_banner" style="background-image: url({{asset("storage/posts/default_post_banner.jpg")}})">
-                    <div class="post_category">category</div>
-                </a>
-                <div class="post_info">
-                    <div>
-                        <p>25min ago</p>
-                        <i class="fa-solid fa-circle"></i>
-                        <p>5min reading</p>
+                    <a href="" class="post_banner" style="background-image: url({{asset("storage/posts/default_post_banner.jpg")}})">
+                        <div class="post_category">category</div>
+                    </a>
+                    <div class="post_info">
+                        <div>
+                            <p>25min ago</p>
+                            <i class="fa-solid fa-circle"></i>
+                            <p>5min reading</p>
+                        </div>
+                        <a href="">
+                            <h4 id="post_title">post small title</h4>
+                            <p>tiny post descriptoin just for a bit content...</p>
+                        </a>
                     </div>
-                    <a href="">
-                        <h4 id="post_title">post small title</h4>
-                        <p>tiny post descriptoin just for a bit content...</p>
+                    <a href="" class="post_owner">
+                        <div class="blog_profile" style="background-image: url({{asset("storage/profiles/default_blog_profile.jpg")}})"></div>
+                        <p>blog title</p>
                     </a>
                 </div>
-                <a href="" class="post_owner">
-                    <div class="blog_profile" style="background-image: url({{asset("storage/profiles/default_blog_profile.jpg")}})"></div>
-                    <p>blog title</p>
-                </a>
-            </div>
             </div>
         </section>
         <button id="load_button" class="">
@@ -493,5 +297,4 @@
     </main>
 @endsection
 @section('js')
-    @vite(["resources/js/popular.js"])
 @endsection

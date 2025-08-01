@@ -20,6 +20,7 @@ return new class extends Migration
             $table->integer('role')->default(0);
             $table->date('birth')->nullable();
             $table->enum('sex', ["M", "F", "A"])->default("M");
+            $table->boolean('dark_mode')->default(false);
             $table->text('description')->nullable();
             $table->string('banner')->default("profiles/default_banner_1.png");
             $table->string('photo')->default("profiles/default_profile.png");

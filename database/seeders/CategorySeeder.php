@@ -14,10 +14,12 @@ class CategorySeeder extends Seeder
      */
     public function run(): void {
         DB::table("categories")->insert([
+            ["name" => "News"],
             ["name" => "Self"],
             ["name" => "Travel"],
             ["name" => "Food"],
             ["name" => "Health"],
+            ["name" => "Nature"],
             ["name" => "Fitness"],
             ["name" => "Mind"],
             ["name" => "Parenting"],
@@ -41,6 +43,7 @@ class CategorySeeder extends Seeder
             ["name" => "Inspiration"],
             ["name" => "Photography"],
             ["name" => "Art"],
+            ["name" => "Culture"],
             ["name" => "Productivity"],
             ["name" => "Mindset"],
             ["name" => "Pets"],

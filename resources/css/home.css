@@ -275,3 +275,69 @@
 .side_post:hover {
     text-decoration: underline;
 }
+.dark #home_cover {
+    color: #dadada;
+}
+.dark #home_cover form {
+    color: #dadada;
+    background-color: #46494c;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.dark #home_cover form input {
+    color: white;
+}
+.dark #home_cover form button {
+    color: white;
+    background-color: rgba(81, 122, 255, 0.5);
+}
+.dark #home_cover form button:hover {
+    background-color: rgba(81, 122, 255, 0.7);
+}
+.dark #home_cover form button:active {
+    background-color: rgba(81, 122, 255, 0.5);
+}
+.dark #home_cover form:hover {
+    background-color: #46494c;
+}
+.dark #home_cover form:has(input:focus) {
+    background-color: #505355;
+}
+.dark #recommended_posts h3 {
+    color: #dadada;
+}
+.dark #filter {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+.dark #filter_background {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+.dark .filter {
+    color: #dadada;
+}
+.dark .filter:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.dark .selected:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.dark #side_posts {
+    background-color: rgba(0, 0, 0, 0.34);
+}
+.dark .post_block h3 {
+    color: #dadada;
+    border-bottom: 2px solid #c5c3c6;
+}
+.dark .post_block a:last-child {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.dark .post_block a:last-child:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+.dark .side_post .post_desc * {
+    color: #dadada;
+}
+.dark .side_post .post_desc p {
+    color: #cacaca;
+    font-weight: 500;
+}

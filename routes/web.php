@@ -13,6 +13,9 @@ Route::get("/logon", [UserController::class, "logon"])->name("logon");
 Route::get("/logout", [UserController::class, "logout"])->name("logout");
 Route::get("/popular", [GeneralController::class, "popular"])->name("popular");
 Route::get("/explore", [GeneralController::class, "explore"])->name("explore");
+Route::prefix("/user")->group(function() {
+    Route::get("/dark/{dark_mode?}", [UserController::class, "color_mode"])->name("dark_mode");//color_mode
+});
 Route::prefix("/auth")->group(function() {
     Route::post("/login", [UserController::class, "auth_login"])->name("auth.login");
     Route::post("/logon", [UserController::class, "auth_logon"])->name("auth.logon");   

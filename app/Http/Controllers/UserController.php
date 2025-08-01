@@ -55,6 +55,12 @@ class UserController extends Controller
         Auth::logout();
         return redirect()->route("index");
     }
+    public function color_mode($dark_mode = 0) {
+        $user = User::find(Auth::user()->id);
+        $user["dark_mode"] = ($dark_mode == 1);
+        $user->save();
+        Auth::login($user);
+    }
     public function index() {
     }
     public function create() {
