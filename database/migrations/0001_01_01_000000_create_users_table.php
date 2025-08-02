@@ -22,7 +22,7 @@ return new class extends Migration
             $table->enum('sex', ["M", "F", "A"])->default("M");
             $table->boolean('dark_mode')->default(false);
             $table->text('description')->nullable();
-            $table->string('banner')->default("profiles/default_banner_1.png");
+            $table->string('banner')->default("banners/default_banner_1.jpg");
             $table->string('photo')->default("profiles/default_profile.png");
             $table->foreignId('ocupation_id')->nullable()->constrained()->onDelete("set null");
             $table->rememberToken();

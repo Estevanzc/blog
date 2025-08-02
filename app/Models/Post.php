@@ -15,6 +15,7 @@ class Post extends Model {
         "subtitle",
         "summary",
         "content",
+        "banner",
         "category_id",
         "user_id",
         "blog_id",

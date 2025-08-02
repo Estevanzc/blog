@@ -61,7 +61,8 @@ class UserController extends Controller
         $user->save();
         Auth::login($user);
     }
-    public function index(User $user) {
+    public function index() {
+        $user = Auth::user();
         return view("users.profile", [
             "user" => $user
         ]);

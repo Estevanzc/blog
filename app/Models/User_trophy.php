@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class User_trophy extends Model
 {
@@ -12,4 +13,10 @@ class User_trophy extends Model
         "user_id",
         "trophy_id",
     ];
+    public function user(): BelongsTo {
+        return $this->belongsTo(User::class);
+    }
+    public function trophy(): BelongsTo {
+        return $this->belongsTo(Trophy::class);
+    }
 }

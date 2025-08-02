@@ -1,0 +1,190 @@
+section {
+    position: relative;
+    width: 60vw;
+    min-height: calc(100vh - 75px);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-flow: column;
+}
+#banner {
+    position: absolute;
+    width: 100%;
+    height: 300px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 15px 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+#banner div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0px 10px;
+    padding: 7.5px 15px;
+    border-radius: 10px;
+    background-color: rgba(238, 223, 87, 0.8);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: all 0.25s ease;
+}
+#banner div:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: rgba(236, 223, 107, 0.9);
+}
+#banner div i {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-shadow: 1px 1px 2.5px rgba(0, 0, 0, 0.24);
+    box-shadow: 1px 1px 2.5px rgba(0, 0, 0, 0.24);
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 100%;
+}
+#banner div p {
+    font-weight: bold;
+    font-size: 0.9em;
+    color: white;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.24);
+}
+#profile_basic_info {
+    margin-top: 240px;
+    z-index: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+}
+#top_profile {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#left_profile {
+    width: 50%;
+    padding-left: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0px 20px;
+}
+#right_profile {
+    width: 50%;
+    height: 150px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+#right_profile button {
+    padding: 7.5px;
+    border-radius: 10px;
+    border: none;
+    font-size: 1.1em;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    background-color: #dadada;
+    transition: all 0.25s ease;
+}
+#right_profile button:hover {
+    background-color: white;
+}
+#profile_reference {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-flow: column;
+}
+#user_name {
+    font-size: 2em;
+    font-weight: 500;
+    color: white;
+    text-shadow: 1px 1px 2.5px rgba(0, 0, 0, 0.4);
+}
+#user_email {
+    margin-top: 20px;
+    font-size: 1.05em;
+    color: rgba(0, 0, 0, 0.8);
+    font-weight: bold;
+}
+#user_role {
+    margin-top: 10px;
+    font-size: 0.9em;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.9);
+}
+#user_since {
+    margin-top: 10px;
+    font-size: 0.9em;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.8);
+}
+#user_profile {
+    width: 150px;
+    height: 150px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 100%;
+    border: 5px solid #f0f0f0;
+}
+#bottom_profile {
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+}
+#profile_bar {
+    width: 100%;
+    height: 40px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 100%;
+}
+#profile_bar div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0px 10px;
+    color: rgba(0, 0, 0, 0.8);
+    border-bottom: 3px solid transparent;
+    transition: all 0.25s ease;
+    cursor: pointer;
+}
+#profile_bar div:hover {
+    border-color: rgba(0, 0, 0, 0.5);
+}
+#profile_bar div p {
+    font-size: 0.9em;
+    font-weight: bold;
+}
+.selected {
+    border-color: rgba(0, 0, 0, 0.8) !important;
+}
+#user_description {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+}
+#user_blogs {
+    width: 100%;
+    display: none;
+    justify-content: flex-start;
+    align-items: center;
+}

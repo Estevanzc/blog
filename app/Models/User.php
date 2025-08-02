@@ -56,6 +56,9 @@ class User extends Authenticatable
     public function posts(): HasMany {
         return $this->hasMany(Post::class);
     }
+    public function trophy(): HasMany {
+        return $this->hasMany(User_trophy::class);
+    }
     /**
      * The attributes that should be hidden for serialization.
      *
